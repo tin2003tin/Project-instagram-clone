@@ -1,18 +1,18 @@
 import {
-	Avatar,
-	Button,
-	Divider,
-	Flex,
-	GridItem,
-	Image,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalOverlay,
-	Text,
-	VStack,
-	useDisclosure,
+  Avatar,
+  Button,
+  Divider,
+  Flex,
+  GridItem,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
+  Text,
+  VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
@@ -30,39 +30,39 @@ import usePostStore from "../../store/postStore";
 import Caption from "../Comment/Caption";
 
 const ProfilePost = ({ post }) => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	const userProfile = useUserProfileStore((state) => state.userProfile);
-	const authUser = useAuthStore((state) => state.user);
-	const showToast = useShowToast();
-	const [isDeleting, setIsDeleting] = useState(false);
-	const deletePost = usePostStore((state) => state.deletePost);
-	const decrementPostsCount = useUserProfileStore((state) => state.deletePost);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const userProfile = useUserProfileStore((state) => state.userProfile);
+  const authUser = useAuthStore((state) => state.user);
+  const showToast = useShowToast();
+  const [isDeleting, setIsDeleting] = useState(false);
+  const deletePost = usePostStore((state) => state.deletePost);
+  const decrementPostsCount = useUserProfileStore((state) => state.deletePost);
 
-	const handleDeletePost = async () => {
-		if (!window.confirm("Are you sure you want to delete this post?")) return;
-		if (isDeleting) return;
+  const handleDeletePost = async () => {
+    if (!window.confirm("Are you sure you want to delete this post?")) return;
+    if (isDeleting) return;
 
-		try {
-			const imageRef = ref(storage, `posts/${post.id}`);
-			await deleteObject(imageRef);
-			const userRef = doc(firestore, "users", authUser.uid);
-			await deleteDoc(doc(firestore, "posts", post.id));
+    try {
+      const imageRef = ref(storage, `posts/${post.id}`);
+      await deleteObject(imageRef);
+      const userRef = doc(firestore, "users", authUser.uid);
+      await deleteDoc(doc(firestore, "posts", post.id));
 
-			await updateDoc(userRef, {
-				posts: arrayRemove(post.id),
-			});
+      await updateDoc(userRef, {
+        posts: arrayRemove(post.id),
+      });
 
-			deletePost(post.id);
-			decrementPostsCount(post.id);
-			showToast("Success", "Post deleted successfully", "success");
-		} catch (error) {
-			showToast("Error", error.message, "error");
-		} finally {
-			setIsDeleting(false);
-		}
-	};
+      deletePost(post.id);
+      decrementPostsCount(post.id);
+      showToast("Success", "Post deleted successfully", "success");
+    } catch (error) {
+      showToast("Error", error.message, "error");
+    } finally {
+      setIsDeleting(false);
+    }
+  };
 
-	return (
+  return (
     <>
       <GridItem
         cursor={"pointer"}
@@ -129,7 +129,7 @@ const ProfilePost = ({ post }) => {
               mx={"auto"}
               maxH={"90vh"}
               minH={"50vh"}
-              flexDirection={{ base: "row", sm: "column" }}
+              flexDirection={{ base: "row" }}
             >
               <Flex
                 borderRadius={4}
@@ -142,11 +142,7 @@ const ProfilePost = ({ post }) => {
               >
                 <Image src={post.imageURL} alt="profile post" />
               </Flex>
-              <Flex
-                flex={1}
-                flexDir={"column"}
-                px={10}
-              >
+              <Flex flex={1} flexDir={"column"} px={10}>
                 <Flex alignItems={"center"} justifyContent={"space-between"}>
                   <Flex alignItems={"center"} gap={4}>
                     <Avatar
