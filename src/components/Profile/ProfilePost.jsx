@@ -129,7 +129,7 @@ const ProfilePost = ({ post }) => {
               mx={"auto"}
               maxH={"90vh"}
               minH={"50vh"}
-              // flexDirection={{ base: "row", sm: "column" }}
+              flexDirection={{ base: "row", sm: "column" }}
             >
               <Flex
                 borderRadius={4}
@@ -146,7 +146,6 @@ const ProfilePost = ({ post }) => {
                 flex={1}
                 flexDir={"column"}
                 px={10}
-                display={{ base: "flex", md: "flex" }}
               >
                 <Flex alignItems={"center"} justifyContent={"space-between"}>
                   <Flex alignItems={"center"} gap={4}>
