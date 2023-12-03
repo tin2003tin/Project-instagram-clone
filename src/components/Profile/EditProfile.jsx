@@ -15,7 +15,7 @@ import {
   ModalOverlay,
   Stack,
 } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAuthStore from "../../store/authStore";
 import usePreviewImg from "../../hooks/usePreviewImg";
 import useEditProfile from "../../hooks/useEditProfile";
@@ -49,7 +49,6 @@ const EditProfile = ({ isOpen, onClose }) => {
       bio: authUser.bio,
     });
   }, [authUser]);
-
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
