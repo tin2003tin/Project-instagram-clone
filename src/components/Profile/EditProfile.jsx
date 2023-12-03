@@ -49,6 +49,7 @@ const EditProfile = ({ isOpen, onClose }) => {
       bio: authUser.bio,
     });
   }, [authUser]);
+
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -104,7 +105,7 @@ const EditProfile = ({ isOpen, onClose }) => {
                     placeholder={"Full Name"}
                     size={"sm"}
                     type={"text"}
-                    value={inputs.fullName || authUser.fullName}
+                    value={inputs.fullName}
                     onChange={(e) =>
                       setInputs({ ...inputs, fullName: e.target.value })
                     }
@@ -117,7 +118,7 @@ const EditProfile = ({ isOpen, onClose }) => {
                     placeholder={"Username"}
                     size={"sm"}
                     type={"text"}
-                    value={inputs.username || authUser.username}
+                    value={inputs.username}
                     onChange={(e) =>
                       setInputs({ ...inputs, username: e.target.value })
                     }
@@ -130,7 +131,7 @@ const EditProfile = ({ isOpen, onClose }) => {
                     placeholder={"Bio"}
                     size={"sm"}
                     type={"text"}
-                    value={inputs.bio || authUser.bio}
+                    value={inputs.bio}
                     onChange={(e) =>
                       setInputs({ ...inputs, bio: e.target.value })
                     }
