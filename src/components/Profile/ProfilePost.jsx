@@ -174,7 +174,7 @@ const ProfilePost = ({ post }) => {
                 <VStack
                   w="full"
                   alignItems={"start"}
-                  maxH={"350px"}
+                  maxH={"200px"}
                   overflowY={"auto"}
                 >
                   {/* CAPTION */}
