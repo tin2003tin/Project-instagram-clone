@@ -129,7 +129,7 @@ const ProfilePost = ({ post }) => {
               mx={"auto"}
               maxH={"90vh"}
               minH={"50vh"}
-              flexDirection={{ base: "row", sm: "column", md: "row" }}
+              flexDirection={{ sm: "column", md: "row" }}
             >
               <Flex
                 borderRadius={4}
