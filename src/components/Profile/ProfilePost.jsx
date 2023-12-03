@@ -146,6 +146,7 @@ const ProfilePost = ({ post }) => {
                 flex={1}
                 flexDir={"column"}
                 px={10}
+                display={{ base: "flex", md: "flex" }}
               >
                 <Flex alignItems={"center"} justifyContent={"space-between"}>
                   <Flex alignItems={"center"} gap={4}>
