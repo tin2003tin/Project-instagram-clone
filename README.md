@@ -1,7 +1,4 @@
 # Fullstack Instagram Clone 
-
-
-
 @This is my first project from tutorial(https://github.com/burakorkmez/instagram-clone)
 ### Built With React, Firebase && Chakra UI
 #Framework : Vite-React (https://vitejs.dev/guide/)
