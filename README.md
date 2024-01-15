@@ -9,5 +9,5 @@
 #### - Storage : Firebase (https://firebase.google.com/)
 #### - Deploy : Vercel (https://vercel.com/)
 ### Web Link
-##### -tin-my-tutorial-1.vercel.app
+##### -https://tin-my-tutorial-1.vercel.app
 ##### -https://tin-my-tutorial-1-azg8x18jl-tin2003tins-projects.vercel.app/
